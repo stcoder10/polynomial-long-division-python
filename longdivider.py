@@ -15,12 +15,12 @@ class Binomial: #class to store two term polynoimals
         )
 
 
-def subtractPolynomials(top: Polynomial, bottom: Polynomial):
-    return Polynomial(top.secondCoefficient - bottom.secondCoefficient,
+def subtractBinBinomials(top:Binomial, bottom:Binomial):
+    return Binomial(top.secondCoefficient - bottom.secondCoefficient,
                       currentPower, coefficients[i], currentPower - 1)
 
 
-def findRemainder(top: Polynomial, bottom: Polynomial):
+def findRemainder(top:Binomial, bottom:Binomial):
     return top.secondCoefficient - bottom.secondCoefficient
 
 
@@ -46,7 +46,7 @@ for i in range(highestPower + 1):
 divCoefficient = int(input(f"{alphabet[highestPower + 1]}: "))
 divConstant = int(input(f"{alphabet[highestPower+2]}: "))
 
-currentNumerator = Polynomial(coefficients[0], currentPower, coefficients[1],
+currentNumerator =Binomial(coefficients[0], currentPower, coefficients[1],
                               currentPower - 1)
 
 working = True
@@ -61,13 +61,13 @@ while working:
     i += 1
     currentPower -= 1
 
-    top = Polynomial(resultCoefficient, currentPower, coefficients[i],
+    top =Binomial(resultCoefficient, currentPower, coefficients[i],
                      currentPower - 1)
-    bottom = Polynomial((resultCoefficient * divCoefficient), currentPower,
+    bottom =Binomial((resultCoefficient * divCoefficient), currentPower,
                         resultCoefficient * divConstant, currentPower - 1)
 
     if currentPower != 0:
-        currentNumerator = subtractPolynomials(top, bottom)
+        currentNumerator = subtractBinBinomials(top, bottom)
 
     else:
         working = False
