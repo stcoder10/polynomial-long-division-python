@@ -1,7 +1,7 @@
 import string
 
 
-class Polynomial:
+class Binomial: #class to store two term polynoimals
     def __init__(self, firstCoefficient, firstPower, secondCoefficient,
                  secondPower):
         self.firstCoefficient = firstCoefficient
