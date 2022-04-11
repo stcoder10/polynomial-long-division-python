@@ -21,22 +21,12 @@ highestPower = int(input("What's the highest power of x? "))
 currentPower = highestPower
 coefficients = list()
 
-model = "("
-
-for i in range(highestPower):
-    model += f"{string.ascii_lowercase[i]}x ^ {highestPower - i} + "
-
-model += f"{string.ascii_lowercase[highestPower + 1]}) / ({string.ascii_lowercase[highestPower + 2]}x + {string.ascii_lowercase[highestPower + 3]})"
-
-print(model)
-
-for i in range(highestPower + 1):        
-    coefficient = int(input(f"{string.ascii_lowercase[i]}: "))
+for i in range(highestPower + 1):
+    coefficient = int(input("Coefficient: "))
     coefficients.append(coefficient)
 
-
-divCoefficient = int(input(f"{string.ascii_lowercase[highestPower + 2]}: "))
-divConstant = int(input(f"{string.ascii_lowercase[highestPower + 3]}: "))
+divCoefficient = int(input("div coefficient: "))
+divConstant = int(input("Div constant: "))
 
 currentNumerator = Polynomial(coefficients[0], currentPower, coefficients[1], currentPower- 1)
 
